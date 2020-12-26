@@ -8,12 +8,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 
-#define DEFAULT 0
-#define QWERTY  1
-#define GAME	2
-#define LOWER   3
-#define RAISE   4
-#define ADJUST	5
+#define DEFAULT 1
+#define QWERTY  2
+#define GAME	3
+#define LOWER   4
+#define RAISE   5
+#define ADJUST	6
 
 / {
 	keymap {
@@ -110,10 +110,10 @@
   *                        `----------------------------------'  `----------------------------------'
   */
  						bindings = <
- 	&none     &kp EXCL  &kp AT	   &kp LBRC	&kp RBRC 	&kp PIPE2                                              					   &none	  	&none	     &none    		&none  	 		 &none		&kp BSLH
+ 	&none     &kp EXCL  &kp AT	  &kp LBRC	&kp RBRC 	&kp PIPE2                                              					   &none	  	&none	     &none    		&none  	 		 &none		&kp BSLH
  	&kp LSHFT &kp HASH  &kp DLLR  &kp LPAR	&kp RPAR	&kp GRAVE                                              					   &kp KP_PLUS  &kp KP_MINUS &kp KP_SLASH 	&kp KP_ASTERISK	 &kp PRCNT 	&kp SQT
  	&none     &kp PRCNT &kp CARET &kp LBKT	&kp RBKT	&kp TILDE 	 &tog DEFAULT  	  &tog QWERTY   &tog GAME  	    &tog ADJUST    &kp AMPS  	&kp EQUAL  	 &kp COMMA  	&kp DOT 	 	 &kp QMARK  &kp MINUS
- 	        	     		   &kp LGUI &kp DEL 	&mt LALT RET &lt LOWER SPACE  &lt RAISE ESC &lt LOWER EQUAL &lt RAISE SEMI  &kp TAB		&kp BSPC  	 &kp RALT
+ 	        	     		   	  &kp LGUI  &kp DEL 	&mt LALT RET &lt LOWER SPACE  &lt RAISE ESC &lt LOWER EQUAL &lt RAISE SEMI  &kp TAB		&kp BSPC  	 &kp RALT
  			>;
 
  			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DN C_BRI_UP>;
@@ -147,7 +147,7 @@
  		adjust_layer {
  /*
   * Adjust Layer: Function keys, RGB 
-  *
+  *;= 
   * ,-------------------------------------------.                              ,-------------------------------------------.
   * |   PWR  | F1   |  F2  | F3   | F4   | F5   |                              | F6   | F7   |  F8  | F9   | F10  |        |
   * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
@@ -160,10 +160,10 @@
   *                        `----------------------------------'  `----------------------------------'
   */
   			bindings = <
- 	&kp C_PWR 		&kp F1			&kp F2	    	&kp F3			&kp F4 			&kp F5																		&kp F6	 &kp F7     &kp F8  &kp F9 	&kp F10		&none
- 	&rgb_ug RGB_TOG	&rgb_ug RGB_SAI &rgb_ug RGB_HUI	&rgb_ug RGB_BRI	&rgb_ug RGB_SPI &rgb_ug RGB_EFF																&kp LEFT &kp DOWN	&kp UP	&kp F11	&kp F12	 	&none
- 	&kp LCTL 		&rgb_ug	RGB_SAD	&rgb_ug	RGB_HUD	&rgb_ug RGB_BRD	&rgb_ug RGB_SPD &rgb_ug RGB_EFR &tog DEFAULT    &tog QWERTY   &tog GAME		  &tog ADJUST 	&none	 &none		&none	&none   &none		&none
- 	        	     		    					&none	  		&none	 		&none		    &lt LOWER SPACE &lt RAISE ESC &lt LOWER EQUAL &lt RAISE SEMI &none 	 &none	  	&none
+ 	&kp C_PWR 		&kp F1			&kp F2	    	&kp F3			&kp F4 			&kp F5																		 &kp F6	  &kp F7    &kp F8  &kp F9 	&kp F10		&none
+ 	&rgb_ug RGB_TOG	&rgb_ug RGB_SAI &rgb_ug RGB_HUI	&rgb_ug RGB_BRI	&rgb_ug RGB_SPI &rgb_ug RGB_EFF																 &kp LEFT &kp DOWN	&kp UP	&kp F11	&kp F12	 	&none
+ 	&kp LCTL 		&rgb_ug	RGB_SAD	&rgb_ug	RGB_HUD	&rgb_ug RGB_BRD	&rgb_ug RGB_SPD &rgb_ug RGB_EFR &tog DEFAULT    &tog QWERTY   &tog GAME		  &tog ADJUST 	 &none	  &none		&none	&none   &none		&none
+ 	        	     		    					&none	  		&none	 		&none		    &lt LOWER SPACE &lt RAISE ESC &lt LOWER EQUAL &lt RAISE SEMI &none 	  &none	  	&none
  			>;
 
  			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DN C_BRI_UP>;

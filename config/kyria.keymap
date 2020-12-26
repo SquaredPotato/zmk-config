@@ -38,7 +38,7 @@
 	&kp ESC   		&kp COMMA	&kp DOT	 &kp P 		&kp Y 	&kp F                                                				     &kp G 	  &kp C		&kp R 	 &kp L 	&kp BSPC	&kp BSLH
 	&mt CAPS LSHFT  &kp A 		&kp O    &kp D 		&kp U 	&kp I                                                				     &kp D 	  &kp H		&kp T 	 &kp N 	&kp S   	&kp SQT
 	&mt LCTL BSPC	&kp SEMI	&kp Q    &kp J 		&kp K 	&kp X 		 &tog DEFAULT 	 &tog QWERTY 	&tog GAME  	  &tog ADJUST 	 &kp B 	  &kp M		&kp W 	 &kp V 	&kp Z   	&kp MINUS
-	                 					 &kp LGUI   &kp DEL &mt LALT RET &lt LOWER SPACE &lt RAISE ESC &lt LOWER RET  &lt RAIS SPACE &kp TAB  &kp BSPC &kp RALT
+	                 					 &kp LGUI   &kp DEL &mt LALT RET &lt LOWER SPACE &lt RAISE ESC &lt LOWER RET  &lt RAIS SPACE &kp TAB  &kp BSPC  &kp RALT
 			>;
  
 			sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp PG_UP PG_DN>;
@@ -63,7 +63,7 @@
 	&mt CAPS LSHFT  &kp A 	&kp S    &kp D 		&kp F 		 &kp G                                                				 &kp H 	  &kp J		&kp K 	  &kp L 	&kp SEMI   	&kp SQT
 	&mt LCTL BSPC	&kp Z 	&kp X    &kp C 		&kp V 		 &kp B 	 &tog DEFAULT  	 &tog QWERTY   &tog GAME  	  &tog ADJUST 	 &kp N 	  &kp M		&kp COMMA &kp DOT 	&kp FSLH   	&kp MINUS
 	                 				 &kp LGUI   &kp DEL &mt LALT RET &lt LOWER SPACE &lt RAISE ESC &lt LOWER RET  &lt RAIS SPACE &kp TAB  &kp BSPC  &kp RALT
-
+	        >;
 			sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp PG_UP PG_DN>;
 		};
 

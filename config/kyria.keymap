@@ -36,12 +36,12 @@
 
 			bindings = <
 	&kp ESC   		&kp COMMA	&kp DOT	 &kp P 		&kp Y 	&kp F                                                				     &kp G 	  &kp C		&kp R 	 &kp L 	&kp BSPC	&kp BSLH
-	&mt LSHFT CAPS  &kp A 		&kp O    &kp D 		&kp U 	&kp I                                                				     &kp D 	  &kp H		&kp T 	 &kp N 	&kp S   	&kp SQT
+	&mt LSHFT LCAPS &kp A 		&kp O    &kp E 		&kp U 	&kp I                                                				     &kp D 	  &kp H		&kp T 	 &kp N 	&kp S   	&kp SQT
 	&mt LCTL BSPC	&kp SEMI	&kp Q    &kp J 		&kp K 	&kp X 		 &tog DEFAULT 	 &tog QWERTY   &tog GAME  	  &tog ADJUST 	 &kp B 	  &kp M		&kp W 	 &kp V 	&kp Z   	&kp MINUS
 	                 					 &kp LGUI   &kp DEL &mt LALT RET &lt LOWER SPACE &lt RAISE ESC &lt LOWER RET  &lt RAISE SPACE &kp TAB &kp BSPC  &kp RALT
 			>;
  
-			sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp PG_UP PG_DN>;
+			sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp PG_DN PG_UP>;
 		};
 /* 
  * Base Layer: QWERTY
@@ -61,12 +61,12 @@
 			
 			bindings = <
 	&kp ESC   		&kp Q	&kp W	&kp E 		&kp R 	&kp T                                                				 	 &kp Y 	  	&kp U		&kp I 	  &kp O 	&kp P		&kp BSPC
-	&mt LSHFT CAPS  &kp A 	&kp S  	&kp D 		&kp F 	&kp G                                                				 	 &kp H 	  	&kp J		&kp K 	  &kp L 	&kp SEMI   	&kp SQT
+	&mt LSHFT LCAPS &kp A 	&kp S  	&kp D 		&kp F 	&kp G                                                				 	 &kp H 	  	&kp J		&kp K 	  &kp L 	&kp SEMI   	&kp SQT
 	&mt LCTL BSPC	&kp Z 	&kp X  	&kp C 		&kp V 	&kp B 	 	 &tog DEFAULT    &tog QWERTY   &tog GAME   	  &tog ADJUST 	 &kp N 	  	&kp M		&kp COMMA &kp DOT 	&kp FSLH   	&kp MINUS
 	                 				&kp LGUI	&kp DEL &mt LALT RET &lt LOWER SPACE &lt RAISE ESC &lt LOWER RET  &lt RAISE SPACE &kp TAB  	&kp BSPC  	&kp RALT
 	        >;
 
-			sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp PG_UP PG_DN>;
+			sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp PG_DN PG_UP>;
 		};
 
  		game_layer {
@@ -86,18 +86,18 @@
   */
  						bindings = <
  	&kp ESC   		&kp Q	&kp W	 &kp E 		&kp R 		&kp T                                                				    &none	  &kp PAUSE_BREAK  &kp INS    &kp HOME  &kp PG_UP	&kp PSCRN
- 	&mt LSHFT CAPS  &kp A 	&kp S    &kp D 		&kp F 		&kp G                                                				    &none 	  &kp UP    	   &kp DEL    &kp END	 &kp PG_DN 	&kp SQT
+ 	&mt LSHFT LCAPS &kp A 	&kp S    &kp D 		&kp F 		&kp G                                                				    &none 	  &kp UP    	   &kp DEL    &kp END	 &kp PG_DN 	&kp SQT
  	&mt LCTL BSPC	&kp Z 	&kp X    &kp C 		&kp V 		&kp B 		 &tog DEFAULT    &tog QWERTY   &tog GAME  	 &tog ADJUST 	&kp LEFT  &kp DOWN  	   &kp RIGHT  &none 	 &none   	&kp MINUS
  	        	                 	 &kp LGUI   &kp DEL 	&mt LALT RET &lt LOWER SPACE &lt RAISE ESC &lt LOWER RET &lt RAISE SPACE &kp TAB   &kp BSPC  	   &kp RALT
  			>;
 
- 			sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp PG_UP PG_DN>;
+ 			sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp PG_DN PG_UP>;
  		};
 
  		lower_layer {
  /* 
-  * Lower Layer: Symbols
-  *
+  * Lower Layer: Symbols 
+  * tt
   * ,-------------------------------------------.                              ,-------------------------------------------.
   * |        |  !   |  @   |  {   |  }   |  |   |                              |      |      |      |      |      |  | \   |
   * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
@@ -105,18 +105,18 @@
   * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
   * |        |  %   |  ^   |  [   |  ]   |  ~   |DVORAK|QWERTY|  | GAME |ADJUST|   &  |  =   |  ,   |  .   |    ? | - _    |
   * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-  *                        | GUI  | Tab  | Enter| Space| Esc  |  | 	=  |   ;  | Tab  | Bksp | AltGr|
+  *                        | GUI  | Tab  | Enter| Space| Esc  |  | 	=   |   ;  | Tab  | Bksp | AltGr|
   *                        |      |      | Alt  | Lower| Raise|  | Lower| Raise|      |      |      |
   *                        `----------------------------------'  `----------------------------------'
   */
  						bindings = <
- 	&none  &kp EXCL	 &kp AT	   &kp LBRC	&kp RBRC 	&kp PIPE2                                              					   &none	  	&none	     &none    		&none  	 		 &none		&kp BSLH
- 	&none  &kp HASH  &kp DLLR  &kp LPAR	&kp RPAR	&kp GRAVE                                              					   &kp KP_PLUS  &kp KP_MINUS &kp KP_SLASH 	&kp KP_ASTERISK	 &kp PRCNT 	&kp SQT
- 	&none  &kp PRCNT &kp CARET &kp LBKT	&kp RBKT	&kp TILDE 	 &tog DEFAULT  	  &tog QWERTY   &tog GAME  	    &tog ADJUST    &kp AMPS  	&kp EQUAL  	 &kp COMMA  	&kp DOT 	 	 &kp QMARK  &kp MINUS
+ 	&none     &kp EXCL  &kp AT	   &kp LBRC	&kp RBRC 	&kp PIPE2                                              					   &none	  	&none	     &none    		&none  	 		 &none		&kp BSLH
+ 	&kp LSHFT &kp HASH  &kp DLLR  &kp LPAR	&kp RPAR	&kp GRAVE                                              					   &kp KP_PLUS  &kp KP_MINUS &kp KP_SLASH 	&kp KP_ASTERISK	 &kp PRCNT 	&kp SQT
+ 	&none     &kp PRCNT &kp CARET &kp LBKT	&kp RBKT	&kp TILDE 	 &tog DEFAULT  	  &tog QWERTY   &tog GAME  	    &tog ADJUST    &kp AMPS  	&kp EQUAL  	 &kp COMMA  	&kp DOT 	 	 &kp QMARK  &kp MINUS
  	        	     		   &kp LGUI &kp DEL 	&mt LALT RET &lt LOWER SPACE  &lt RAISE ESC &lt LOWER EQUAL &lt RAISE SEMI  &kp TAB		&kp BSPC  	 &kp RALT
  			>;
 
- 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+ 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DN C_BRI_UP>;
  		};
 
  		raise_layer {
@@ -135,23 +135,23 @@
   *                        `----------------------------------'  `----------------------------------'
   */
  			bindings = <
- 	&none  &kp N1	 &kp N2	    &kp N3		&kp N4 		&kp N5                                              					    &kp N6		&kp N7     	&kp N8  &kp N9 	 	&kp N0		&none
- 	&none  &none	 &kp C_PREV &kp C_PLAY	&kp C_NEXT	&kp C_VOL_UP                                              					&kp LEFT  	&kp DOWN	&kp UP	&kp RIGHT	&none	 	&none
- 	&none  &none	 &none		&none		&kp C_MUTE	&kp C_VOL_DN &tog DEFAULT  	  &tog QWERTY   &tog GAME  	    &tog ADJUST     &none	  	&none	  	&none	&none 	 	&none   	&none
+ 	&none  	  &kp N1 &kp N2	    &kp N3		&kp N4 		&kp N5                                              					    &kp N6		&kp N7     	&kp N8  &kp N9 	 	&kp N0		&none
+ 	&kp LSHFT &none	 &kp C_PREV &kp C_PLAY	&kp C_NEXT	&kp C_VOL_UP                                              					&kp LEFT  	&kp DOWN	&kp UP	&kp RIGHT	&none	 	&none
+ 	&none  	  &none	 &none		&none		&kp C_MUTE	&kp C_VOL_DN &tog DEFAULT  	  &tog QWERTY   &tog GAME  	    &tog ADJUST     &none	  	&none	  	&none	&none 	 	&none   	&none
  	        	     		    &none	  	&none	 	&none		 &lt LOWER SPACE  &lt RAISE ESC &lt LOWER EQUAL &lt RAISE SEMI  &none		&none	  	&none
  			>;
 
- 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp PG_UP PG_DN>;
+ 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DN C_BRI_UP>;
  		};
 
  		adjust_layer {
  /*
-  * Adjust Layer: Function keys, RGB
+  * Adjust Layer: Function keys, RGB 
   *
   * ,-------------------------------------------.                              ,-------------------------------------------.
   * |   PWR  | F1   |  F2  | F3   | F4   | F5   |                              | F6   | F7   |  F8  | F9   | F10  |        |
   * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-  * |   TOG  | SAI  | HUI  | VAI  | MOD  |      |							  |      |      |      | F11  | F12  |        |
+  * |   TOG  | SAI  | HUI  | VAI  | MOD  |      |							   |      |      |      | F11  | F12  |        |
   * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
   * |  LCTL  | SAD  | HUD  | VAD  | RMOD |      |      |      |  |      |      |      |      |      |      |      |        |
   * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
@@ -166,7 +166,7 @@
  	        	     		    					&none	  		&none	 		&none		    &lt LOWER SPACE &lt RAISE ESC &lt LOWER EQUAL &lt RAISE SEMI &none 	 &none	  	&none
  			>;
 
- 			sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp PG_UP PG_DN>;
+ 			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DN C_BRI_UP>;
  		};
 
 	};

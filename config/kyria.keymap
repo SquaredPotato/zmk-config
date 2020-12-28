@@ -19,26 +19,26 @@
 	keymap {
 		compatible = "zmk,keymap";
 /* 
- * Base Layer: DVORAK
+ * Base Layer: DVORAK 
  *
- * ,----------------------------------------------.               	#								               ,-------------------------------------------.
- * |  RAIS/ESC | , <  | . >  |   P  |   Y  |   F  |               									               |   G  |   C  |   R  |   L  | BKSP |  | \   |
- * |-----------+------+------+------+------+------|               									               |------+------+------+------+------+--------|
- * |LShift/caps|   A  |   O  |  E   |   U  |   I  |               									               |   D  |   H  |   T  |   N  |   S  |  ' "   |
+ * ,----------------------------------------------.																   ,-------------------------------------------.
+ * |  RAIS/ESC | , <  | . >  |   P  |   Y  |   F  |																   |   G  |   C  |   R  |   L  | BKSP |  | \   |
+ * |-----------+------+------+------+------+------|																   |------+------+------+------+------+--------|
+ * |LShift/caps|   A  |   O  |  E   |   U  |   I  |																   |   D  |   H  |   T  |   N  |   S  |  ' "   |
  * |-----------+------+------+------+------+------+-------------. 									 ,-------------+------+------+------+------+------+--------|
  * |  Ctrl/BS  |   ;  |   Q  |   J  |   K  |   X  |DVORAK|QWERTY| 									 | GAME |ADJUST|   B  |   M  |  W   |   V  |   Z  |  - _   |
  * `-------------------------+------+------+------+------+------| 									 |------+------+------+------+------+----------------------'
- *         	                 | GUI  | Del  | Enter| Space| Esc  | 									 | Enter| Space| Tab  |  bsp | AltGr|
- *         	                 |      |      | Alt  | Lower| Raise| 									 | Lower| Raise|      |      |      |
- *         	                 `----------------------------------' 									 `----------------------------------'
+ *							 | GUI  | Del  | Enter| Space| Esc  | 									 | Enter| Space| Tab  |  bsp | AltGr|
+ *							 |      |      | Alt  | Lower| Raise| 									 | Lower| Raise|      |      |      |
+ *							 `----------------------------------' 									 `----------------------------------'
  */
 		dvorak_layer {
 
 			bindings = <
-	&kp ESC   		&kp COMMA	&kp DOT	 &kp P 		&kp Y 	&kp F                                                				     &kp G 	  &kp C		&kp R 	 &kp L 	&kp BSPC	&kp BSLH
-	&mt LSHFT LCAPS &kp A 		&kp O    &kp E 		&kp U 	&kp I                                                				     &kp D 	  &kp H		&kp T 	 &kp N 	&kp S   	&kp SQT
-	&mt LCTL BSPC	&kp SEMI	&kp Q    &kp J 		&kp K 	&kp X 		 &tog 0 	 &tog 1   &tog 2  	  &tog 5 	 &kp B 	  &kp M		&kp W 	 &kp V 	&kp Z   	&kp MINUS
-	                 					 &kp LGUI   &kp DEL &mt LALT RET &lt 3 SPACE &lt 4 ESC &lt 3 RET  &lt 4 SPACE &kp TAB &kp BSPC  &kp RALT
+	&kp ESC   		&kp COMMA	&kp DOT	 &kp P 		&kp Y 	&kp F                                                						&kp G 	  	&kp C		&kp R 	 &kp L 	&kp BSPC	&kp BSLH
+	&mt LSHFT LCAPS &kp A 		&kp O    &kp E 		&kp U 	&kp I                                                						&kp D 	  	&kp H		&kp T 	 &kp N 	&kp S   	&kp SQT
+	&mt LCTL BSPC	&kp SEMI	&kp Q    &kp J 		&kp K 	&kp X 		 &tog DVORAK 	 &tog QWERTY  	 &tog GAME  	&tog ADJUST 	&kp B 		&kp M		&kp W 	 &kp V 	&kp Z   	&kp MINUS
+	                 					 &kp LGUI   &kp DEL &mt LALT RET &lt LOWER SPACE &lt RAISE ESC 	 &lt LOWER RET  &lt RAISE SPACE &kp TAB 	&kp BSPC	&kp RALT
 			>;
  
 			sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp PG_DN PG_UP>;
@@ -46,23 +46,23 @@
 /* 
  * Base Layer: QWERTY
  *
- * ,-------------------------------------------.                              ,-------------------------------------------.
- * |RAIS/ESC|   Q  |   W  |   E  |   R  |   T  |                              |   Y  |   U  |   I  |   O  |   P  |  | \   |
- * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
- * | LShift |   A  |   S  |  D   |   F  |   G  |                              |   H  |   J  |   K  |   L  | ;  : |  ' "   |
+ * ,-------------------------------------------.							  ,-------------------------------------------.
+ * |RAIS/ESC|   Q  |   W  |   E  |   R  |   T  |							  |   Y  |   U  |   I  |   O  |   P  |  | \   |
+ * |--------+------+------+------+------+------|							  |------+------+------+------+------+--------|
+ * | LShift |   A  |   S  |  D   |   F  |   G  |							  |   H  |   J  |   K  |   L  | ;  : |  ' "   |
  * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
- * | Ctrl/BS|   Z  |   X  |   C  |   V  |   B  |DVORAK|QWERTY|  | GAME |ADJUST|   N  |   M  | ,  < | . >  | /  ? |  - _   |
+ * | Ctrl/BS|   Z  |   X  |   C  |   V  |   B  |DVORAK|QWERTY|  | GAME |ADJUST|   N  |   M  | ,  < | . >  |    ? |  - _   |
  * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
- *                        | GUI  | Del  | Enter| Space| Esc  |  | Enter| Space| Tab  | Bksp | AltGr|
- *                        |      |      | Alt  | Lower| Raise|  | Lower| Raise|      |      |      |
- *                        `----------------------------------'  `----------------------------------'
+ *						  | GUI  | Del  | Enter| Space| Esc  |  | Enter| Space| Tab  | Bksp | AltGr|
+ *						  |      |      | Alt  | Lower| Raise|  | Lower| Raise|      |      |      |
+ *						  `----------------------------------'  `----------------------------------'
  */
 		qwerty_layer {	
 			bindings = <
-	&kp ESC   		&kp Q	&kp W	&kp E 		&kp R 	&kp T                                                				 	 &kp Y 	  	&kp U		&kp I 	  &kp O 	&kp P		&kp BSPC
-	&mt LSHFT LCAPS &kp A 	&kp S  	&kp D 		&kp F 	&kp G                                                				 	 &kp H 	  	&kp J		&kp K 	  &kp L 	&kp SEMI   	&kp SQT
-	&mt LCTL BSPC	&kp Z 	&kp X  	&kp C 		&kp V 	&kp B 	 	 &tog 0    &tog 1   &tog 2   	  &tog 5 	 &kp N 	  	&kp M		&kp COMMA &kp DOT 	&kp FSLH   	&kp MINUS
-	                 				&kp LGUI	&kp DEL &mt LALT RET &lt 3 SPACE &lt 4 ESC &lt 3 RET  &lt 4 SPACE &kp TAB  	&kp BSPC  	&kp RALT
+	&kp ESC   		&kp Q	&kp W	&kp E 		&kp R 	&kp T                                                						 &kp Y 	  	&kp U		&kp I 	  &kp O 	&kp P		&kp BSPC
+	&mt LSHFT LCAPS &kp A 	&kp S  	&kp D 		&kp F 	&kp G                                                						 &kp H 	  	&kp J		&kp K 	  &kp L 	&kp SEMI   	&kp SQT
+	&mt LCTL BSPC	&kp Z 	&kp X  	&kp C 		&kp V 	&kp B 	 	 &tog DVORAK 	 &tog QWERTY  	 &tog GAME  	&tog ADJUST 	 &kp N 	  	&kp M		&kp COMMA &kp DOT 	&kp FSLH   	&kp MINUS
+	                 				&kp LGUI	&kp DEL &mt LALT RET &lt LOWER SPACE &lt RAISE ESC 	 &lt LOWER RET  &lt RAISE SPACE	 &kp TAB  	&kp BSPC  	&kp RALT
 	        >;
 
 			sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp PG_DN PG_UP>;
@@ -72,22 +72,22 @@
  /* 
   * Base Layer: GAME
   *
-  * ,-------------------------------------------.                              ,-------------------------------------------.
-  * |RAIS/ESC|   Q  |   W  |   E  |   R  |   T  |                              |      | paus |insert| home | pgup |printscreen|
-  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-  * | LShift |   A  |   S  |  D   |   F  |   G  |                              |      |   ^  |delete|  end | pgdn |  Plus  |
+  * ,-------------------------------------------.							   ,-------------------------------------------.
+  * |RAIS/ESC|   Q  |   W  |   E  |   R  |   T  |							   |      | paus |insert| home | pgup |printscreen|
+  * |--------+------+------+------+------+------|							   |------+------+------+------+------+--------|
+  * | LShift |   A  |   S  |  D   |   F  |   G  |							   |      |   ^  |delete|  end | pgdn |  Plus  |
   * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
   * | Ctrl/BS|   Z  |   X  |   C  |   V  |   B  |DVORAK|QWERTY|  | GAME |ADJUST| <--  |   v  | -->  |      |      | Minus  |
   * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-  *                        | GUI  | Tab  | Enter| Space| Esc  |  | Enter| Space| Tab  | Bksp | AltGr|
-  *                        |      |      | Alt  | Lower| Raise|  | Lower| Raise|      |      |      |
-  *                        `----------------------------------'  `----------------------------------'
+  *						   | GUI  | Tab  | Enter| Space| Esc  |  | Enter| Space| Tab  | Bksp | AltGr|
+  *						   |      |      | Alt  | Lower| Raise|  | Lower| Raise|      |      |      |
+  *						   `----------------------------------'  `----------------------------------'
   */
  						bindings = <
- 	&kp ESC   		&kp Q	&kp W	 &kp E 		&kp R 		&kp T                                                				    &none	  &kp PAUSE_BREAK  &kp INS    &kp HOME  &kp PG_UP	&kp PSCRN
- 	&mt LSHFT LCAPS &kp A 	&kp S    &kp D 		&kp F 		&kp G                                                				    &none 	  &kp UP    	   &kp DEL    &kp END	 &kp PG_DN 	&kp SQT
- 	&mt LCTL BSPC	&kp Z 	&kp X    &kp C 		&kp V 		&kp B 		 &tog 0    &tog 1   &tog 2  	 &tog 5 	&kp LEFT  &kp DOWN  	   &kp RIGHT  &none 	 &none   	&kp MINUS
- 	        	                 	 &kp LGUI   &kp DEL 	&mt LALT RET &lt 3 SPACE &lt 4 ESC &lt 3 RET &lt 4 SPACE &kp TAB   &kp BSPC  	   &kp RALT
+ 	&kp ESC   		&kp Q	&kp W	 &kp E 		&kp R 		&kp T                                                	   					&none	  &kp PAUSE_BREAK  	&kp INS    &kp HOME  &kp PG_UP	&kp PSCRN
+ 	&mt LSHFT LCAPS &kp A 	&kp S    &kp D 		&kp F 		&kp G                                                	   					&none 	  &kp UP    	   	&kp DEL    &kp END	 &kp PG_DN 	&kp SQT
+ 	&mt LCTL BSPC	&kp Z 	&kp X    &kp C 		&kp V 		&kp B 		 &tog DVORAK 	 &tog QWERTY  	 &tog GAME  	&tog ADJUST 	&kp LEFT  &kp DOWN  	   	&kp RIGHT  &none 	 &none   	&kp MINUS
+ 	        	                 	 &kp LGUI   &kp DEL 	&mt LALT RET &lt LOWER SPACE &lt RAISE ESC 	 &lt LOWER RET  &lt RAISE SPACE	&kp TAB   &kp BSPC  	   	&kp RALT
  			>;
 
  			sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp PG_DN PG_UP>;
@@ -97,22 +97,22 @@
  /* 
   * Lower Layer: Symbols 
   * 
-  * ,-------------------------------------------.                              ,-------------------------------------------.
-  * |        |  !   |  @   |  {   |  }   |  |   |                              |      |      |      |      |      |  | \   |
-  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-  * |        |  #   |  $   |  (   |  )   |  `   |                              |   +  |  -   |  /   |  *   |  %   |  ' "   |
+  * ,-------------------------------------------.							   ,-------------------------------------------.
+  * |        |  !   |  @   |  {   |  }   |  |   |							   |      |      |      |      |      |  | \   |
+  * |--------+------+------+------+------+------|							   |------+------+------+------+------+--------|
+  * |        |  #   |  $   |  (   |  )   |  `   |							   |   +  |  -   |  /   |  *   |  %   |  ' "   |
   * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
   * |        |  %   |  ^   |  [   |  ]   |  ~   |DVORAK|QWERTY|  | GAME |ADJUST|   &  |  =   |  ,   |  .   |    ? | - _    |
   * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-  *                        | GUI  | Tab  | Enter| Space| Esc  |  | 	=   |   ;  | Tab  | Bksp | AltGr|
-  *                        |      |      | Alt  | Lower| Raise|  | Lower| Raise|      |      |      |
-  *                        `----------------------------------'  `----------------------------------'
+  *						   | GUI  | Tab  | Enter| Space| Esc  |  | 	=   |   ;  | Tab  | Bksp | AltGr|
+  *						   |      |      | Alt  | Lower| Raise|  | Lower| Raise|      |      |      |
+  *						   `----------------------------------'  `----------------------------------'
   */
  						bindings = <
- 	&none     &kp EXCL  &kp AT	  &kp LBRC	&kp RBRC 	&kp PIPE2                                              					   &none	  	&none	     &none    		&none  	 		 &none		&kp BSLH
- 	&kp LSHFT &kp HASH  &kp DLLR  &kp LPAR	&kp RPAR	&kp GRAVE                                              					   &kp KP_PLUS  &kp KP_MINUS &kp KP_SLASH 	&kp KP_ASTERISK	 &kp PRCNT 	&kp SQT
- 	&none     &kp PRCNT &kp CARET &kp LBKT	&kp RBKT	&kp TILDE 	 &tog 0  	  &tog 1   &tog 2  	    &tog 5    &kp AMPS  	&kp EQUAL  	 &kp COMMA  	&kp DOT 	 	 &kp QMARK  &kp MINUS
- 	        	     		   	  &kp LGUI  &kp DEL 	&mt LALT RET &lt 3 SPACE  &lt 4 ESC &lt 3 EQUAL &lt 4 SEMI  &kp TAB		&kp BSPC  	 &kp RALT
+ 	&none     &kp EXCL  &kp AT	  &kp LBRC	&kp RBRC 	&kp PIPE2                                              						&none	  	&none	     &none    		&none  	 		 &none		&kp BSLH
+ 	&kp LSHFT &kp HASH  &kp DLLR  &kp LPAR	&kp RPAR	&kp GRAVE                                              						&kp KP_PLUS &kp KP_MINUS &kp KP_SLASH 	&kp KP_ASTERISK	 &kp PRCNT 	&kp SQT
+ 	&none     &kp PRCNT &kp CARET &kp LBKT	&kp RBKT	&kp TILDE 	 &tog DVORAK 	 &tog QWERTY  	 &tog GAME  	&tog ADJUST 	&kp AMPS  	&kp EQUAL  	 &kp COMMA  	&kp DOT 	 	 &kp QMARK  &kp MINUS
+ 	        	     		   	  &kp LGUI  &kp DEL 	&mt LALT RET &lt LOWER SPACE &lt RAISE ESC 	 &lt LOWER RET  &lt RAISE SPACE &kp TAB		&kp BSPC  	 &kp RALT
  			>;
 
  			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DN C_BRI_UP>;
@@ -122,22 +122,22 @@
  /*
   * Raise Layer: Number keys, media, navigation
   *
-  * ,-------------------------------------------.                              ,-------------------------------------------.
-  * |        |   1  |  2   |  3   |  4   |  5   |                              |  6   |  7   |  8   |  9   |  0   |        |
-  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
-  * |        |      | Prev | Play | Next | VolUp|                              | Left | Down | Up   | Right|      |        |
+  * ,-------------------------------------------.							   ,-------------------------------------------.
+  * |        |   1  |  2   |  3   |  4   |  5   |							   |  6   |  7   |  8   |  9   |  0   |        |
+  * |--------+------+------+------+------+------|							   |------+------+------+------+------+--------|
+  * |        |      | Prev | Play | Next | VolUp|							   | Left | Down | Up   | Right|      |        |
   * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
   * |        |      |      |      | Mute | VolDn|DVORAK|QWERTY|  | GAME |ADJUST| MLeft| Mdown| MUp  |MRight|      |        |
   * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-  *                        |      |      |      | Space| Esc  |  | 	=   |   ;  |      |      |      |
-  *                        |      |      |      | Lower| Raise|  | Lower| Raise|      |      |      |
-  *                        `----------------------------------'  `----------------------------------'
+  *						   |      |      |      | Space| Esc  |  | 	=   |   ;  |      |      |      |
+  *						   |      |      |      | Lower| Raise|  | Lower| Raise|      |      |      |
+  *						   `----------------------------------'  `----------------------------------'
   */
  			bindings = <
- 	&none  	  &kp N1 &kp N2	    &kp N3		&kp N4 		&kp N5                                              					    &kp N6		&kp N7     	&kp N8  &kp N9 	 	&kp N0		&none
+ 	&none  	  &kp N1 &kp N2	    &kp N3		&kp N4 		&kp N5                                              						&kp N6		&kp N7     	&kp N8  &kp N9 	 	&kp N0		&none
  	&kp LSHFT &none	 &kp C_PREV &kp C_PLAY	&kp C_NEXT	&kp C_VOL_UP                                              					&kp LEFT  	&kp DOWN	&kp UP	&kp RIGHT	&none	 	&none
- 	&none  	  &none	 &none		&none		&kp C_MUTE	&kp C_VOL_DN &tog 0  	  &tog 1   &tog 2  	    &tog 5     &none	  	&none	  	&none	&none 	 	&none   	&none
- 	        	     		    &none	  	&none	 	&none		 &lt 3 SPACE  &lt 4 ESC &lt 3 EQUAL &lt 4 SEMI  &none		&none	  	&none
+ 	&none  	  &none	 &none		&none		&kp C_MUTE	&kp C_VOL_DN &tog DVORAK 	 &tog QWERTY  	 &tog GAME  	&tog ADJUST 	&none	  	&none	  	&none	&none 	 	&none   	&none
+ 	        	     		    &none	  	&none	 	&none		 &lt LOWER SPACE &lt RAISE ESC 	 &lt LOWER RET  &lt RAISE SPACE &none		&none	  	&none
  			>;
 
  			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DN C_BRI_UP>;
@@ -146,23 +146,23 @@
  		adjust_layer {
  /*
   * Adjust Layer: Function keys, RGB
-  *;= 
-  * ,-------------------------------------------.                              ,-------------------------------------------.
-  * |   PWR  | F1   |  F2  | F3   | F4   | F5   |                              | F6   | F7   |  F8  | F9   | F10  |        |
-  * |--------+------+------+------+------+------|                              |------+------+------+------+------+--------|
+  *
+  * ,-------------------------------------------.							   ,-------------------------------------------.
+  * |   PWR  | F1   |  F2  | F3   | F4   | F5   |							   | F6   | F7   |  F8  | F9   | F10  |        |
+  * |--------+------+------+------+------+------|							   |------+------+------+------+------+--------|
   * |   TOG  | SAI  | HUI  | VAI  | MOD  |      |							   |      |      |      | F11  | F12  |        |
   * |--------+------+------+------+------+------+-------------.  ,-------------+------+------+------+------+------+--------|
   * |  LCTL  | SAD  | HUD  | VAD  | RMOD |      |      |      |  |      |      |      |      |      |      |      |        |
   * `----------------------+------+------+------+------+------|  |------+------+------+------+------+----------------------'
-  *                        |      |      |      |      |      |  |      |      |      |      |      |
-  *                        |      |      |      |      |      |  |      |      |      |      |      |
-  *                        `----------------------------------'  `----------------------------------'
+  *						   |      |      |      |      |      |  |      |      |      |      |      |
+  *						   |      |      |      |      |      |  |      |      |      |      |      |
+  *						   `----------------------------------'  `----------------------------------'
   */
   			bindings = <
- 	&kp C_PWR 		&kp F1			&kp F2	    	&kp F3			&kp F4 			&kp F5																		 &kp F6	  &kp F7    &kp F8  &kp F9 	&kp F10		&none
- 	&rgb_ug RGB_TOG	&rgb_ug RGB_SAI &rgb_ug RGB_HUI	&rgb_ug RGB_BRI	&rgb_ug RGB_SPI &rgb_ug RGB_EFF																 &kp LEFT &kp DOWN	&kp UP	&kp F11	&kp F12	 	&none
- 	&kp LCTL 		&rgb_ug	RGB_SAD	&rgb_ug	RGB_HUD	&rgb_ug RGB_BRD	&rgb_ug RGB_SPD &rgb_ug RGB_EFR &tog 0    &tog 1   &tog 2		  &tog 5 	 &none	  &none		&none	&none   &none		&none
- 	        	     		    					&none	  		&none	 		&none		    &lt 3 SPACE &lt 4 ESC &lt 3 EQUAL &lt 4 SEMI &none 	  &none	  	&none
+ 	&kp C_PWR 		&kp F1			&kp F2	    	&kp F3			&kp F4 			&kp F5														   					&kp F6	  &kp F7    &kp F8  &kp F9 	&kp F10		&none
+ 	&rgb_ug RGB_TOG	&rgb_ug RGB_SAI &rgb_ug RGB_HUI	&rgb_ug RGB_BRI	&rgb_ug RGB_SPI &rgb_ug RGB_EFF												   					&kp LEFT   &kp DOWN	&kp UP	&kp F11	&kp F12	 	&none
+ 	&kp LCTL 		&rgb_ug	RGB_SAD	&rgb_ug	RGB_HUD	&rgb_ug RGB_BRD	&rgb_ug RGB_SPD &rgb_ug RGB_EFR &tog DVORAK 	 &tog QWERTY  	 &tog GAME  	&tog ADJUST 	&none	  &none		&none	&none   &none		&none
+ 	        	     		    					&none	  		&none	 		&none		    &lt LOWER SPACE &lt RAISE ESC 	 &lt LOWER RET  &lt RAISE SPACE &none 	  &none	  	&none
  			>;
 
  			sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP &inc_dec_kp C_BRI_DN C_BRI_UP>;

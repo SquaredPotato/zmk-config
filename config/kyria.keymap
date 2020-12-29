@@ -42,7 +42,7 @@
 			bindings = <
 	&kp ESC   		&kp COMMA	&kp DOT	 &kp P 		&kp Y 	&kp F                                                						&kp G 	  	&kp C		&kp R 	 &kp L 	&kp BSPC	&kp BSLH
 	&mt LSHFT LCAPS &kp A 		&kp O    &kp E 		&kp U 	&kp I                                                						&kp D 	  	&kp H		&kp T 	 &kp N 	&kp S   	&kp SQT
-	&mt LCTL BSPC	&kp SEMI	&kp Q    &kp J 		&kp K 	&kp X 		 &tog DVORAK 	 &tog QWERTY  	 &tog GAME  	&tog ADJUST 	&kp B 		&kp M		&kp W 	 &kp V 	&kp Z   	&kp MINUS
+	&mt LCTL BSPC	&kp SEMI	&kp Q    &kp J 		&kp K 	&kp X 		 &to DVORAK 	 &to QWERTY  	 &to GAME  	&to ADJUST 	&kp B 		&kp M		&kp W 	 &kp V 	&kp Z   	&kp MINUS
 	                 					 &kp LGUI   &kp DEL &mt LALT RET &lt LOWER SPACE &lt RAISE ESC 	 &lt LOWER RET  &lt RAISE SPACE &kp TAB 	&kp BSPC	&kp RALT
 			>;
  

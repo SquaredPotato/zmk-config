@@ -19,8 +19,8 @@
 
 / {
 
-	left_encoder { resolution = <2>; };
-	right_encoder { resolution = <2>; };
+	&left_encoder { resolution = <2>; };
+	&right_encoder { resolution = <2>; };
 	keymap {
 		compatible = "zmk,keymap";
 /* 
@@ -92,7 +92,7 @@
  	&kp ESC   		&kp Q	&kp W	 &kp E 		&kp R 		&kp T                                                	   					&none	  &kp PAUSE_BREAK  	&kp INS    &kp HOME  &kp PG_UP	&kp PSCRN
  	&mt LSHFT LCAPS &kp A 	&kp S    &kp D 		&kp F 		&kp G                                                	   					&none 	  &kp UP    	   	&kp DEL    &kp END	 &kp PG_DN 	&kp SQT
  	&mt LCTL BSPC	&kp Z 	&kp X    &kp C 		&kp V 		&kp B 		 &trans 	 &trans  	 &trans  	&trans 	&kp LEFT  &kp DOWN  	   	&kp RIGHT  &none 	 &none   	&kp MINUS
- 	        	                 	 &kp LGUI   &kp DEL 	&mt LALT RET &lt LOWER SPACE &lt RAISE ESC 	 &lt LOWER RET  &lt RAISE SPACE	&kp TAB   &kp BSPC  	   	&kp RALT
+ 	        	                 	 &kp LGUI   &kp DEL 	&mt LALT RET &kp SPACE &lt RAISE ESC 	 &lt LOWER RET  &lt RAISE SPACE	&kp TAB   &kp BSPC  	   	&kp RALT
  			>;
 
  			sensor-bindings = <&inc_dec_kp DOWN UP &inc_dec_kp PG_DN PG_UP>;
